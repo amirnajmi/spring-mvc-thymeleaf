@@ -1,0 +1,18 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="addUser" method="post">
+        UserName: <input type="text" name="userName">
+        <span th:errors="${user.userName}" style="color: #ff0000"></span><br/>
+        Password: <input type="text" name="password">
+        <span th:errors="${user.password}" style="color: red"></span><br/>
+        email: <input type="text" name="email">
+        <span th:errors="${user.email}" style="color: red"></span><br/>
+        <input type="submit" value="Add">
+    </form>
+</body>
+</html>
