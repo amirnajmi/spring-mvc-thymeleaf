@@ -43,22 +43,4 @@ public class UserController {
         } else return "success";
     }
 
-    @RequestMapping("/globalException")
-    public String throwAnGlobalException(){
-        int error = 10 / 0 ;
-        return "success";
-    }
-    @RequestMapping("/localException")
-    public String throwAnLocalException(){
-        throw new DemoException();
-    }
-
-    @ExceptionHandler(value = {DemoException.class})
-    public ModelAndView handleDemoException(Exception ex){
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("exception", ex.toString());
-        modelAndView.setViewName("demoError");
-        return modelAndView;
-    }
-
 }
